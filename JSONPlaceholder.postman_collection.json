@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "548db567-80bc-4ffa-9c2c-254d1cbfee03",
+		"name": "JSONPlaceholder",
+		"description": "### 📮 Projeto: JSONPlaceholder – Requisições com Postman\n\n**Objetivo:**\n\nPraticar requisições HTTP usando a API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com), testando os métodos principais: **GET, POST, PUT, DELETE**.\n\n**Endpoints usados:**\n\n- `GET /posts` → lista todos os posts\n    \n- `GET /posts/1` → pega um post específico\n    \n- `POST /posts` → cria um novo post\n    \n- `PUT /posts/1` → atualiza um post existente\n    \n- `DELETE /posts/1` → deleta um post (simulado)\n    \n\n**O que foi explorado:**\n\n✔️ Status da resposta (200, 201)\n\n✔️ Corpo da requisição (Body - raw JSON)\n\n✔️ Retorno em JSON\n\n✔️ Teste simples em JavaScript no Postman Tests\n\n**Teste adicionado no GET ALL POSTS:**\n\n```\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response body is an array\", function () {\n    const jsonData = pm.response.json();\n    pm.expect(Array.isArray(jsonData)).to.eql(true);\n});\n\n ```\n\nEndFragment\n\n**Teste adicionado no POST:**\n\n```\njavascriptCopyEditpm.test(\"Status code is 201\", function () {\n    pm.response.to.have.status(201);\n});\n\n ```\n\nEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39944215",
+		"_collection_link": "https://www.postman.com/spaceflight-architect-5986708/workspace/qa-estudo/collection/39944215-548db567-80bc-4ffa-9c2c-254d1cbfee03?action=share&source=collection_link&creator=39944215"
+	},
+	"item": [
+		{
+			"name": "GET ALL POSTS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is an array\", function () {\r",
+							"    const jsonData = pm.response.json();\r",
+							"    pm.expect(Array.isArray(jsonData)).to.eql(true);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /posts/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"QA Learning\",\r\n  \"body\": \"Aprendendo API com Postman!\",\r\n  \"userId\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /posts/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"title\": \"QA Atualizado\",\r\n  \"body\": \"Atualizando o conteúdo do post.\",\r\n  \"userId\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /posts/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/1",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

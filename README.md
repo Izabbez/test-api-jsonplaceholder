@@ -22,11 +22,29 @@ Endpoint principal utilizado: `/posts`
 
 | Método | Endpoint   | Ação                                |
 | ------ | ---------- | ----------------------------------- |
-| GET    | `/posts`   | Retorna todos os posts              |
+| GET    | `/posts`   | Retorna todos os posts              | 
 | GET    | `/posts/1` | Retorna um post específico          |
 | POST   | `/posts`   | Cria um novo post                   |
 | PUT    | `/posts/1` | Atualiza um post existente          |
 | DELETE | `/posts/1` | Deleta um post existente (simulado) |
+
+## 🖼️ Prints dos testes no Postman
+
+### 🔹 Requisição GET All Posts
+![GET All Posts](./assets/get-all-posts.png)
+
+### 🔹 Requisição GET Posts 1
+![GET Posts 1 ](./assets/get-posts-1.png)
+
+### 🔹 Requisição POST Criar Novo Post
+![POST Novo Post](./assets/post-new-posts-1.png)
+
+### 🔹 Requisição PUT Atualizar Post
+![PUT Atualizar Post](./assets/put-update-posts-1.png)
+
+### 🔹 Requisição DELETE Deletar Post
+![DELETE Post](./assets/delete-posts-1.png)
+
 
 ### ✅ Teste adicionado
 
